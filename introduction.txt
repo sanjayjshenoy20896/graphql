@@ -42,3 +42,9 @@ Project ids:
 2.) Reviews
 3.) Authors
 
+Typedef:
+definitions of different types of data that are stored on the server.
+
+Schema:
+It defines the blueprint of the data that is represented in the graph.
+
