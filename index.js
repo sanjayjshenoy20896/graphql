@@ -3,47 +3,48 @@ import { startStandaloneServer } from '@apollo/server/standalone'
 
 //types
 import { typeDefs } from './schema.js';
-import _db from './_db.js';
+import db from './_db.js';
 
+//resolvers
 const resolvers = {
     Query:{
         reviews:()=>{
-            return _db.reviews
+            return db.reviews
         },
         review:(_,args)=>{
-            return _db.reviews.find((review)=> review.id === args.id)
+            return db.reviews.find((review)=> review.id === args.id)
         },
         games:()=>{
-            return _db.games;
+            return db.games;
         },
         game:(_,args)=>{
-            return _db.games.find((review)=>review.id === args.id)
+            return db.games.find((review)=>review.id === args.id)
         },
         authors:()=>{
-            return _db.authors;
+            return db.authors;
         },
         author:(_,args)=>{
-            return _db.authors.find((author)=>author.id === args.id)
+            return db.authors.find((author)=>author.id === args.id)
         }
     },
-    Game:{
-        reviews:(parent)=>{
-            return _db.reviews.filter((review)=> review.game_id === parent.id)
-        }
-    },
-    Review:{
-        author:(parent)=>{
-            return _db.authors.filter((author)=> author.id === parent.id)
-        },
-        game:(parent)=>{
-            return _db.games.filter((game)=>game.id === parent.id)
-        }
-    },
-    Author:{
-        reviews:(parent)=>{
-            return _db.reviews.filter((review)=> review.author_id === parent.id)
-        }
+    Game: {
+    reviews(parent) {
+      return db.reviews.filter((r) => r.game_id === parent.id)
     }
+  },
+  Review: {
+    author(parent) {
+      return db.authors.find((a) => a.id === parent.author_id)
+    },
+    game(parent) {
+      return db.games.find((g) => g.id === parent.game_id)
+    }
+  },
+  Author: {
+    reviews(parent) {
+      return db.reviews.filter((r) => r.author_id === parent.id)
+    }
+  },
 }
 
 //server setup 
