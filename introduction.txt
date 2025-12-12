@@ -1,4 +1,4 @@
-Graph QL:
+Graph QL: (Grapgh Query language)
 It an open-source query language for APIs and a server-side runtime for executing those queries
 It allows clients to request exactly the data they need in a single network call.
 This helps in preventing underfetching and overfetching which is a common drawback in Rest API.
@@ -14,5 +14,31 @@ The strongly-typed, self-documenting nature of the schema enables powerful devel
 GraphQL can serve as a unified data layer, aggregating data from multiple disparate sources into a single consistant endpoint.
 
 
+Advantages:
+1.) Prevents underfetching
+2.) Prevents overfetching
+3.) Single endpoint for all operations
 
+
+Apollo server:
+It is an open-source, spec-compliant GraphQL server that's compatible with any GraphQL client.
+
+
+Quering:
+The query to a GraphQL can be done by using the query keyword
+
+syntax:
+query <query_name>{
+    <resource_name>{
+        //fields that are needed
+    }
+}
+1.) query_name -> can be any name that describes the functionality of query. We can view this like a function name
+2.) resource_name -> schema that is used to make a query request.
+
+
+Project ids:
+1.) Games
+2.) Reviews
+3.) Authors
 
