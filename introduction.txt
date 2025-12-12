@@ -1,0 +1,18 @@
+Graph QL:
+It an open-source query language for APIs and a server-side runtime for executing those queries
+It allows clients to request exactly the data they need in a single network call.
+This helps in preventing underfetching and overfetching which is a common drawback in Rest API.
+
+Benefits:
+1.) Effeciency:
+Clients can fetch all necessary data in a single request, reducing the number of network round trips and improving performance, especially on mobile networks.
+2.) Flexibility:
+It allows for adding new fields and types to an API without creating breaking changes or new versions, ensuring backward compatibility.
+3.) Strong developer Experiance:
+The strongly-typed, self-documenting nature of the schema enables powerful developer tools and integrated development environments (IDEs) like GraphiQL, which provide introspection and auto-completion capabilities.
+4.) Data Aggregation:
+GraphQL can serve as a unified data layer, aggregating data from multiple disparate sources into a single consistant endpoint.
+
+
+
+
